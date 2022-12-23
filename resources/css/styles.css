@@ -7,13 +7,9 @@ Table of Contents
 * 1. ROOT VARIABLES
 * 2. RESET
 * 3. GENERAL
-* 4.
-* 5.
-* 6.
-* 7.
-* 8.
-* 9.
-* 10.
+* 4. CARD
+* 5. FOOTER
+* 6. MEDIA QUERIES
 
 ===========================================
 ======================================== */
@@ -106,7 +102,8 @@ body {
 }
 
 /* ====================[4]==================== */
-/* CARD */
+/* ===== CARD ===== */
+
 
 .card {
     padding: 1.5rem;
@@ -118,6 +115,8 @@ body {
                 0 1.5rem 0 1rem hsl(217, 54%, 11%),
                 0 1.5rem 0 2.75rem hsl(217deg 55% 12%);
 }
+
+/* NFT AND OVERLAY */
 
 .img-cta {
     position: relative;
@@ -141,6 +140,8 @@ body {
 .overlay:hover {
     opacity: 1;
 }
+
+/* HEADING AND OTHER INFO */
 
 h1 {
     font-size: 1.4rem;
@@ -197,6 +198,8 @@ h1 {
     margin-right: 1rem;
 }
 
+/* HOVER STATES */
+
 .hov {
     color: white;
     transition: color 150ms linear;
@@ -208,6 +211,7 @@ h1 {
 }
 
 /* ====================[5]==================== */
+/* ===== FOOTER ===== */
 
 .attribution {
     font-size: 11px;
@@ -221,6 +225,7 @@ h1 {
 }
 
 /* ====================[6]==================== */
+/* ===== MEDIA QUERIES ===== */
 
 @media (max-width: 57.1875em) and (orientation: landscape) {
     .card {
