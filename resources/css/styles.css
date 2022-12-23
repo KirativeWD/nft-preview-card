@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* ========================================
+Table of Contents
+===========================================
+
+* 1. ROOT VARIABLES
+* 2. RESET
+* 3. GENERAL
+* 4.
+* 5.
+* 6.
+* 7.
+* 8.
+* 9.
+* 10.
+
+===========================================
+======================================== */
+
+/* ====================[1]==================== */
+/* ===== ROOT VARIABLES ===== */
+
+:root {
+    /* COLORS */
+    /* PRIMARY */
+    --clr-primary-blue: hsl(215, 51%, 70%);
+    --clr-secondary-blue: hsl(178, 100%, 50%);
+
+    /* NEUTRALS */
+    --clr-blue-800: hsl(217, 54%, 11%);
+    --clr-blue-700: hsl(216, 50%, 16%);
+    --clr-blue-600: hsl(215, 32%, 27%);
+
+    /* TYPOGRAPHY */
+    /* FONT SIZE */
+    --fs-reg: 1.125rem;
+    --fs-sm: 1rem;
+
+    /* FONT FAMILY */
+    --ff-primary: 'Outfit', sans-serif;
+
+    /* FONT WEIGHT */
+    --fw-light: 300;
+    --fw-reg: 400;
+    --fw-semi-bold: 600;
+}
+
+/* ====================[2]==================== */
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+p {
+    overflow-wrap: break-word;
+}
+
+/* ====================[3]==================== */
+/* ===== GENERAL ===== */
+
+body {
+    background: var(--clr-blue-800);
+    font-size: var(--fs-sm);
+    color: var(--clr-primary-blue);
+    font-weight: var(--fw-light);
+    font-family: var(--ff-primary);
+    display: grid;
+    place-content: center;
+    margin: 1.5rem;
+    overflow: hidden;
+}
+
+.sr-only {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ====================[4]==================== */
+/* CARD */
+
+.card {
+    padding: 1.5rem;
+    background: var(--clr-blue-700);
+    border-radius: 0.75rem;
+    transform: translateY(-2rem);
+    max-width: 21.375em;
+    box-shadow: 
+                0 1.5rem 0 1rem hsl(217, 54%, 11%),
+                0 1.5rem 0 2.75rem hsl(217deg 55% 12%);
+}
+
+.img-cta {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.overlay {
+    opacity: 0;
+    background-color:hsl(178, 100%, 50%, 0.5);
+    position: absolute;
+    display: grid;
+    place-content: center;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
+    transition: opacity 150ms 100ms linear;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+h1 {
+    font-size: 1.4rem;
+    width: fit-content;
+}
+
+.collection {
+    margin-top: -0.5rem;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ether {
+    padding-left: 1rem;
+    position: relative;
+    color: var(--clr-secondary-blue);
+    font-weight: var(--fw-semi-bold);
+}
+
+.ether::before {
+    content: url('../images/icon-ethereum.svg');
+    position: absolute;
+    transform: translate(-1rem, 0.25rem);
+}
+
+.time-left {
+    position: relative;
+    font-weight: var(--fw-reg);
+}
+
+.time-left::before {
+    content: url('../images/icon-clock.svg');
+    position: absolute;
+    transform: translate(-1.5rem, 0.15rem);
+}
+
+.line {
+    width: 100%;
+    border-bottom: solid thin var(--clr-blue-600);
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+}
+
+.creator img {
+    width: 2rem;
+    border: solid thin white;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.hov {
+    color: white;
+    transition: color 150ms linear;
+    text-decoration: none;
+}
+
+.hov:is(:hover, :focus) {
+    color: var(--clr-secondary-blue);
+}
+
+/* ====================[5]==================== */
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+    left: 0;
+    padding: 0 2rem;
+}
+
+/* ====================[6]==================== */
+
+@media (max-width: 57.1875em) and (orientation: landscape) {
+    .card {
+        max-width: 43.375em;
+        flex-direction: row;
+    }
+
+    .img-cta {
+        width: 15rem;
+    }
+
+    .info-cta {
+        justify-content: center;
+    }
+
+}
+
+@media (min-width: 50em) {
+    .collection {
+        font-size: var(--fs-reg);
+    }
+}
